@@ -80,48 +80,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # ------------------------------------------------------------------------
-      # Toolchain Setup Placeholder:
-      # Uncomment and configure the toolchain required for your project:
-      #
-      # Node.js:
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      #     cache: 'npm'
-      #
-      # Python:
-      # - uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.11'
-      #     cache: 'pip'
-      #
-      # Go:
-      # - uses: actions/setup-go@v5
-      #   with:
-      #     go-version: '1.22'
-      # ------------------------------------------------------------------------
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
       - name: 1. Install Dependencies
-        run: |
-          echo "Running dependency installation..."
-          # Replace with project command: npm ci / pip install -r requirements.txt / go mod download
-          echo "Dependencies installed successfully."
+        run: npm ci
 
-      - name: 2. Validate Code Formatting & Linting
-        run: |
-          echo "Running code formatting and lint checks..."
-          # Replace with project command: npm run lint / ruff check . / golangci-lint run
-          echo "Lint checks passed."
+      - name: 2. Validate TypeScript Types
+        run: npm run typecheck
 
-      - name: 3. Run Automated Tests
-        run: |
-          echo "Running automated test suite..."
-          # Replace with project command: npm test / pytest / go test ./...
-          echo "Test suite passed."
+      - name: 3. Build Project
+        run: npm run build
 
-      - name: 4. Build Project
-        run: |
-          echo "Building project artifacts..."
-          # Replace with project command: npm run build / go build -v ./...
-          echo "Build completed successfully."

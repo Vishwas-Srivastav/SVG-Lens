@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f4f4f5;
+    --bg-tertiary: #e4e4e7;
+    --border-subtle: #e4e4e7;
+    --border-hover: #d4d4d8;
+    --text-primary: #09090b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --accent: #18181b;
+    --accent-contrast: #ffffff;
+  }
+
+  .dark {
+    --bg-primary: #09090b;
+    --bg-secondary: #121215;
+    --bg-tertiary: #18181b;
+    --border-subtle: #27272a;
+    --border-hover: #3f3f46;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --accent: #f4f4f5;
+    --accent-contrast: #09090b;
+  }
+
+  * {
+    border-color: var(--border-subtle);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, kbd {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(113, 113, 122, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.45);
+}
+
+/* Transparent Checkerboard Canvas Pattern */
+.bg-checkerboard-dark {
+  background-color: #09090b;
+  background-image:
+    linear-gradient(45deg, #18181b 25%, transparent 25%),
+    linear-gradient(-45deg, #18181b 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #18181b 75%),
+    linear-gradient(-45deg, transparent 75%, #18181b 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.bg-checkerboard-light {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, #f4f4f5 25%, transparent 25%),
+    linear-gradient(-45deg, #f4f4f5 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f4f4f5 75%),
+    linear-gradient(-45deg, transparent 75%, #f4f4f5 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Coordinate Grid Pattern */
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, rgba(161, 161, 170, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(161, 161, 170, 0.08) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Wireframe Outline Inspection Mode */
+.svg-outline-mode * {
+  fill: none !important;
+  stroke: #71717a !important;
+  stroke-width: 1px !important;
+  stroke-dasharray: none !important;
+  opacity: 1 !important;
+}
+
+.dark .svg-outline-mode * {
+  stroke: #a1a1aa !important;
+}
+
+/* Interactive SVG element selection */
+[data-lens-id] {
+  cursor: pointer;
+  transition: outline-color 0.12s ease;
+}
+
+/* Subtle non-destructive hover indicator */
+[data-lens-hovered="true"] {
+  outline: 1.5px dashed #38bdf8 !important;
+  outline-offset: 1px;
+}
+
+/* Non-destructive selected indicator */
+[data-lens-selected="true"] {
+  outline: 1.5px solid #0284c7 !important;
+  outline-offset: 2px;
+}
+
+.dark [data-lens-hovered="true"] {
+  outline: 1.5px dashed #7dd3fc !important;
+}
+
+.dark [data-lens-selected="true"] {
+  outline: 1.5px solid #38bdf8 !important;
+}
