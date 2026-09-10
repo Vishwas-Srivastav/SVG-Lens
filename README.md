@@ -115,16 +115,6 @@ npm run build
 
 ---
 
-## Deployment
-
-SVG Lens is optimized for static hosting on GitHub Pages, Cloudflare Pages, Vercel, or Netlify.
-
-### GitHub Pages
-
-The repository includes an automated GitHub Actions deployment workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). When changes are merged into `main`, GitHub Actions automatically builds and deploys the static site to GitHub Pages.
-
----
-
 ## Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and review [docs/GUARDRAILS.md](docs/GUARDRAILS.md) before opening pull requests.
