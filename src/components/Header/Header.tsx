@@ -18,6 +18,7 @@ import {
   PanelRight,
   X,
 } from 'lucide-react';
+import { Logo } from '../Common/Logo';
 
 export const Header: React.FC = () => {
   const {
@@ -79,22 +80,7 @@ export const Header: React.FC = () => {
       <div className="flex items-center gap-3 min-w-0 overflow-x-auto no-scrollbar">
         {/* Logo & Brand */}
         <div className="flex items-center gap-2 pr-1 shrink-0">
-          <svg
-            className="w-5 h-5 text-zinc-900 dark:text-zinc-100"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="9" />
-            <circle cx="12" cy="12" r="4" />
-            <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
-            <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
-            <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
-            <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
-          </svg>
+          <Logo size={20} className="text-zinc-900 dark:text-zinc-100" />
           <span className="font-semibold text-xs tracking-tight text-zinc-900 dark:text-zinc-100 hidden sm:inline">
             SVG Lens
           </span>

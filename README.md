@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./public/banner.svg" alt="SVG Lens Banner" width="600" />
+</p>
+
 # SVG Lens
 
 Inspect SVGs visually. Understand what's inside them.

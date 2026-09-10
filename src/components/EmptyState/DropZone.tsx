@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useApp } from '../../state/AppContext';
 import { SAMPLE_SVGS } from '../../core/samples';
 import { FolderOpen, Clipboard, ShieldCheck, ArrowRight, X } from 'lucide-react';
+import { Logo } from '../Common/Logo';
 
 export const DropZone: React.FC = () => {
   const { openSvgFile, loadSvgContent } = useApp();
@@ -67,22 +68,7 @@ export const DropZone: React.FC = () => {
       <div className="w-full max-w-md flex flex-col items-center text-center">
         {/* Minimal Wordmark / Brand */}
         <div className="flex items-center gap-2 mb-2">
-          <svg
-            className="w-6 h-6 text-zinc-900 dark:text-zinc-100"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="9" />
-            <circle cx="12" cy="12" r="4" />
-            <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
-            <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
-            <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
-            <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
-          </svg>
+          <Logo size={28} className="text-zinc-900 dark:text-zinc-100" />
           <h1 className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
             SVG Lens
           </h1>
